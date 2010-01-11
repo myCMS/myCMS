@@ -1,0 +1,52 @@
+#top_cell {vertical-align:top;height:114px;padding:30px 0 30px 0;}
+#top_cell .sp {width:4%;padding-right:10px;}
+#mid_cell {vertical-align:top;height:100%;}
+#mid_cell .sp {width:4%;padding-right:10px;vertical-align:top;}
+#bot_cell {vertical-align:top;height:230px;background:repeat-x top left url('../img/bot_line.gif');}
+
+#order_online {background:no-repeat center left url('../img/d_arr.gif');padding-left:30px;padding-right:15px;}
+#order_online a {color:#1a59a0;font-size:90%;font-weight:bold;white-space:nowrap;}
+#order_online a:hover {color:#ea1b21;}
+
+#icos {width:100%;}
+#icos img {background:#7c7c7c;}
+#icos a:hover img {background:#a60000;}
+#icos td {width:30%;padding:0 5px 0 5px;}
+
+#cusomers_enter {margin:0 10px 0 10px;border-left:4px solid #e6e6e6;padding:0.5em 0 0 30px;height:36px;}
+#cusomers_enter a {white-space:nowrap;font-size:80%;text-decoration:none;border-bottom:1px dashed;color:#214dc9;}
+#cusomers_enter a:hover {color:#a60000;border-bottom:none;}
+
+.sel_txt {margin:10px;font-size:90%;font-weight:bold;}
+.sel_txt p {margin:0 0 0.6em 0;}
+
+.blue {color:#296bc1;}
+
+.menu {margin:35px 0 10px 10px;}
+.menu td {vertical-align:top;padding-right:10px;}
+.menu div {margin:0 0 0.8em 0;}
+.menu span {font-size:80%;font-weight:bold;margin:0;border-left:3px solid #043ba3;padding-left:14px;}
+.menu a {color:#1a59a0;}
+.menu a:hover {color:#e02f2f;text-decoration:underline;}
+.menu a:hover span {border-left:3px solid #e02f2f;}
+
+.news {margin:35px 10px 10px 10px;}
+.news h1 {color:#799e5a;font-size:110%;}
+.news td {vertical-align:top;padding:10px 0 0.6em 10px;}
+.news .date {width:15%;font-size:65%;color:#8e8e8e;}
+.news .txt {width:85%;font-size:70%;}
+
+.base_info td {vertical-align:top;height:248px;}
+.base_info p {font-size:70%;}
+.base_info .contact_links span {margin-right:20px;}
+.base_info .count div {margin:0 0 15px 0;}
+
+#flags div {margin-bottom:7px;}
+
+.br_txt {vertical-align:top;}
+.br_txt h1 {font-size:110%;margin:0 0 0.2em 0;}
+.br_txt p {font-size:80%;margin:0.2em 0 0.8em 0;}
+.br_txt img {margin-top:10px;}
+.red {color:#a60000;}
+.bold {font-weight:bold;}
+.orange {color:#e17514;}

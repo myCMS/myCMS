@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clean_html updated="1220315072">
+    <clean>
+        <search><![CDATA[&nbsp;]]></search>
+        <replace><![CDATA[ ]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&#151;]]></search>
+        <replace><![CDATA[-]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&mdash;]]></search>
+        <replace><![CDATA[-]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&minus;]]></search>
+        <replace><![CDATA[-]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&ndash;]]></search>
+        <replace><![CDATA[-]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&laquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&raquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&ldquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&lsquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&bdquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&ldquo;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&quot;]]></search>
+        <replace><![CDATA["]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&hellip;]]></search>
+        <replace><![CDATA[...]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&amp;]]></search>
+        <replace><![CDATA[&]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&plusmn;]]></search>
+        <replace><![CDATA[+-]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&frac14;]]></search>
+        <replace><![CDATA[1/4]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&frac12;]]></search>
+        <replace><![CDATA[1/2]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&frac34;]]></search>
+        <replace><![CDATA[3/4]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&equiv;]]></search>
+        <replace><![CDATA[===]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&ne;]]></search>
+        <replace><![CDATA[!=]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&le;]]></search>
+        <replace><![CDATA[<=]]></replace>
+    </clean>
+    
+    <clean>
+        <search><![CDATA[&ge;]]></search>
+        <replace><![CDATA[>=]]></replace>
+    </clean>
+</clean_html>

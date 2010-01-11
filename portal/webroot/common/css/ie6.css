@@ -1,0 +1,8 @@
+body {behavior: url('common/htc/csshover.htc');}
+#head, #body, #base {width:expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1000)? "1000px" : "100%");}
+
+.b-head {height:135px;text-align:left;}
+.b-content .b-right {zoom:1;}
+.b-news dd {zoom:1;height:65px;}
+.b-mart {padding-top:1em;}
+  

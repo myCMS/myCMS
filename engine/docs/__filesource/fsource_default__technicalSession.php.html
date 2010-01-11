@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>File Source for Session.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+        
+                                    
+                            	        [ <a href="../classtrees_default.html">Class Tree: default</a> ]
+            [ <a href="../elementindex_default.html">Index: default</a> ]
+        		[ <a href="../elementindex.html">All elements</a> ]		
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">default</div>
+		<div id="packageTitle">default</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="todolist">
+			<p><a href="../todolist.html">Todo List</a></p>
+	</div>
+	<div id="packages">
+		Packages:
+					<p><a href="../li_default.html">default</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+							</div>
+			<div id="interfaces">
+							</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+	    	<h1 align="center">Source for file Session.php</h1>
+<p>Documentation is available at <a href="../default/_technical---Session.php.html">Session.php</a></p>
+<div class="php-src">
+<ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;Used&nbsp;for&nbsp;working&nbsp;with&nbsp;sessions</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EngineCore.php</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;&nbsp;AlexK</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;1.0</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-key">class&nbsp;</span><a href="../default/Session.html">Session</a>&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a10"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$authorized&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$MySQL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$InputFilter&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Constructor&nbsp;of&nbsp;class&nbsp;Session</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;&nbsp;</span><a href="../default/Session.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-id">MySQL&nbsp;</span><span class="src-var">$MySQL</span><span class="src-sym">,&nbsp;</span><span class="src-id">InputFilter&nbsp;</span><span class="src-var">$InputFilter</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$MySQL</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$InputFilter</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-id">AUTHENTICATION_USE_ONLY_ANONIMOUS_ACCESS</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">initSession</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Initiat&nbsp;session&nbsp;and&nbsp;check&nbsp;input&nbsp;data</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-key">function&nbsp;</span><span class="src-id">initSession</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$action&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">-&gt;</span><span class="src-id">getParameter</span><span class="src-sym">(</span><span class="src-str">&quot;action&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">switch</span><span class="src-sym">(</span><span class="src-var">$action</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">case&nbsp;</span><span class="src-str">'registration'</span>:</div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">registration</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">break</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">case&nbsp;</span><span class="src-str">'authentication'</span>:</div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">authentication</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">break</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">case&nbsp;</span><span class="src-str">'logout'</span>:</div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/session_destroy">session_destroy</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">break</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a57"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Register&nbsp;new&nbsp;user</span></div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-key">function&nbsp;</span><span class="src-id">registration</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$login&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">-&gt;</span><span class="src-id">getParameter</span><span class="src-sym">(</span><span class="src-str">&quot;login&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$passwd&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">-&gt;</span><span class="src-id">getParameter</span><span class="src-sym">(</span><span class="src-str">&quot;password&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$login</span><span class="src-sym">)&nbsp;</span>||&nbsp;<span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span><span class="src-sym">;&nbsp;</span><span class="src-comm">//data&nbsp;incorrect</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str">select&nbsp;`id`&nbsp;from&nbsp;users&nbsp;where&nbsp;`login`&nbsp;=&nbsp;'<span class="src-var">$login</span>'</span><span class="src-str">&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">-&gt;</span><span class="src-id">countRows</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span><span class="src-sym">;&nbsp;</span><span class="src-comm">//user&nbsp;exists</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$passwd&nbsp;</span>=&nbsp;<a href="http://www.php.net/md5">md5</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$date&nbsp;&nbsp;&nbsp;</span>=&nbsp;<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">&quot;Y-m-d&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str">insert&nbsp;into&nbsp;users&nbsp;(`login`,&nbsp;`password`,&nbsp;`reg_date`,&nbsp;`active`)&nbsp;values&nbsp;('<span class="src-var">$login</span>',&nbsp;'<span class="src-var">$passwd</span>',&nbsp;'<span class="src-var">$date</span>',&nbsp;1)</span><span class="src-str">&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a85"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Check&nbsp;authentication&nbsp;for&nbsp;user</span></div></li>
+<li><div class="src-line"><a name="a86"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a87"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a88"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a89"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a90"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-key">function&nbsp;</span><span class="src-id">authentication</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$login&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">-&gt;</span><span class="src-id">getParameter</span><span class="src-sym">(</span><span class="src-str">&quot;login&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$passwd&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">-&gt;</span><span class="src-id">getParameter</span><span class="src-sym">(</span><span class="src-str">&quot;password&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$login</span><span class="src-sym">)&nbsp;</span>||&nbsp;<span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodsetSessionValue">setSessionValue</a><span class="src-sym">(</span><span class="src-str">'authorized'</span><span class="src-sym">,</span><span class="src-num">0</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span><span class="src-sym">;&nbsp;</span><span class="src-comm">//data&nbsp;incorrect</span></div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$passwd&nbsp;</span>=&nbsp;<a href="http://www.php.net/md5">md5</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str">select&nbsp;`id`&nbsp;from&nbsp;users&nbsp;where&nbsp;`login`&nbsp;=&nbsp;'<span class="src-var">$login</span>'&nbsp;and&nbsp;`password`&nbsp;=&nbsp;'<span class="src-var">$passwd</span>'&nbsp;and&nbsp;`active`&nbsp;=&nbsp;1</span><span class="src-str">&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">-&gt;</span><span class="src-id">countRows</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodsetSessionValue">setSessionValue</a><span class="src-sym">(</span><span class="src-str">'authorized'</span><span class="src-sym">,</span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodsetSessionValue">setSessionValue</a><span class="src-sym">(</span><span class="src-str">'login'</span><span class="src-sym">,</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$login</span></span><span class="src-str">&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">authorized&nbsp;</span>=&nbsp;<span class="src-num">1</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">login&nbsp;</span>=&nbsp;<span class="src-var">$login</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodsetSessionValue">setSessionValue</a><span class="src-sym">(</span><span class="src-str">'authorized'</span><span class="src-sym">,</span><span class="src-num">0</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a118"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Return&nbsp;true&nbsp;if&nbsp;user&nbsp;if&nbsp;authorized</span></div></li>
+<li><div class="src-line"><a name="a119"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a120"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a121"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a122"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span><span class="src-doc">if&nbsp;user&nbsp;if&nbsp;authorized</span></div></li>
+<li><div class="src-line"><a name="a123"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/Session.html#methodisAuthorized">isAuthorized</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodgetSessionValue">getSessionValue</a><span class="src-sym">(</span><span class="src-str">'authorized'</span><span class="src-sym">,&nbsp;</span><span class="src-num">0</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a127"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a129"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Return&nbsp;all&nbsp;user's&nbsp;details</span></div></li>
+<li><div class="src-line"><a name="a130"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a131"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a132"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a133"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">all&nbsp;</span><span class="src-doc">user's&nbsp;details</span></div></li>
+<li><div class="src-line"><a name="a134"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/Session.html#methodgetUserDetails">getUserDetails</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'login'&nbsp;</span>=&gt;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/Session.html#methodgetSessionValue">getSessionValue</a><span class="src-sym">(</span><span class="src-str">'login'</span><span class="src-sym">,&nbsp;</span><span class="src-str">''</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a139"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a142"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Set&nbsp;session&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a143"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a144"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$name&nbsp;</span><span class="src-doc">name&nbsp;of&nbsp;variable&nbsp;which&nbsp;will&nbsp;be&nbsp;saved</span></div></li>
+<li><div class="src-line"><a name="a145"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$value&nbsp;</span><span class="src-doc">value&nbsp;which&nbsp;will&nbsp;be&nbsp;saved</span></div></li>
+<li><div class="src-line"><a name="a146"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a147"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a148"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/Session.html#methodsetSessionValue">setSessionValue</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">,&nbsp;</span><span class="src-var">$value</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a150"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$name</span></span><span class="src-str">&quot;</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a157"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;session&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a158"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a159"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$name&nbsp;</span><span class="src-doc">name&nbsp;of&nbsp;variable</span></div></li>
+<li><div class="src-line"><a name="a160"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;no&nbsp;throws</span></div></li>
+<li><div class="src-line"><a name="a161"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">value&nbsp;</span><span class="src-doc">of&nbsp;variable</span></div></li>
+<li><div class="src-line"><a name="a162"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/Session.html#methodgetSessionValue">getSessionValue</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">,&nbsp;</span><span class="src-var">$defaultValue&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$name</span></span><span class="src-str">&quot;</span><span class="src-sym">]</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$name</span></span><span class="src-str">&quot;</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a168"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$defaultValue</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a171"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a172"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Tue, 26 May 2009 12:06:16 +0300 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.1</a>
+	</div>
+</div>
+</body>
+</html>

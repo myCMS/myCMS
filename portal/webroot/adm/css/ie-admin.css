@@ -1,0 +1,15 @@
+html{background: url(about:blank) no-repeat; background-attachment: fixed;}
+
+*html .b-martcms{height:16px;}
+*html .b-admin-bar{position: absolute; top: expression(ignoreMe = document.documentElement.scrollTop + "px"); }
+*+html .b-apup .b-apup-close{padding-right:31px !important;}
+*+html .b-apup .b-apup-content{padding-right:31px !important;}
+
+textarea {overflow:visible!important;}
+
+#adm-total, #b-adm-check, #b-adm-container {zoom:1;}
+.datepickerContainer {margin-right:14px;}
+
+.cms-sitemap, .cms-sitemap ul, .cms-sitemap ul ul {list-style-image:none!important;zoom:1;}
+.cms-sitemap li {position:relative;}
+.dropzone {height:5px;top:0;margin-top:-5px;position:absolute;width:100%;zoom:1;}

@@ -1,0 +1,6 @@
+html{background: url(about:blank) no-repeat; background-attachment: fixed;} /*��� ���� ��� �� ���� � fixed �� ������ ��� ���������*/
+
+*html .b-martcms{height:16px;} /*min-height ��� ���� ��� �� ������ �� ������ ������� �� �������� ��� ���������� ������*/
+*html .b-admin-bar{position: absolute; top: expression(ignoreMe = document.documentElement.scrollTop + "px"); } /*��������� fixed ��� �����-������*/
+*+html .b-apup .b-apup-close{padding-right:31px !important;} /*+16px �� ���� ������� � IE7*/
+*+html .b-apup .b-apup-content{padding-right:31px !important;} /*+16px �� ���� ������� � IE7*/

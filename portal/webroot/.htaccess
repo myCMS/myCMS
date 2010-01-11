@@ -1,0 +1,19 @@
+# Включаем возможности mod_rewrite
+RewriteEngine On
+# Создаем правила для разделов
+ RewriteRule  ^.*favicon.ico(.*)$        favicon.ico$1    [L,QSA]
+ RewriteRule  ^.*/img/(.*)$ img/$1    [L,QSA]
+ RewriteRule  ^.*/img_catalogue/(.*)$ img_catalogue/$1    [L,QSA]
+ RewriteRule  ^.*/common/(.*)$ common/$1   [L,QSA]
+ RewriteRule  ^.*/admin/img/(.*)$    img/admin/$1    [L,QSA]
+ RewriteRule  ^.*/files/(.*)$    files/$1    [L,QSA]
+ RewriteRule  ^.*/admin/(.*)$    admin/$1    [L,QSA]
+
+ RewriteCond %{REQUEST_URI} !^.*favicon.ico*
+ RewriteCond %{REQUEST_URI} !^.*/img/*
+ RewriteCond %{REQUEST_URI} !^.*/img_catalogue/*
+ RewriteCond %{REQUEST_URI} !^.*/common/*
+ RewriteCond %{REQUEST_URI} !^.*/admin/*
+ RewriteCond %{REQUEST_URI} !^.*/files/*
+ 
+ RewriteRule ^(.*)$  index.php [L,QSA]

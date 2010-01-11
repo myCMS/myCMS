@@ -1,0 +1,9 @@
+.clearfix {zoom: 1; display: block;}
+*html .b-login-tbl .check-cell input{position:absolute; top:-2px; margin:0; padding:0;}
+*+html .b-login-tbl .check-cell input{position:absolute; top:-2px; margin:0; padding:0;}
+
+
+#body {width:expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1000)? "1000px" : "100%");}
+#base {width:expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1000)? "1000px" : "100%");}
+
+

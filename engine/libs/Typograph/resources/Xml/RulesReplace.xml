@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules_replace updated="1220315072">
+    <rule>
+        <access_key>replace_plus_minus</access_key>
+        <search><![CDATA[+-]]></search>
+        <replace><![CDATA[&plusmn;]]></replace>
+		<description><![CDATA[Замена +- на код.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_paragraph</access_key>
+        <search><![CDATA[§]]></search>
+        <replace><![CDATA[&sect;]]></replace>
+		<description><![CDATA[Замена символа параграфа на код.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_three_dots</access_key>
+        <search><![CDATA[...]]></search>
+        <replace><![CDATA[&hellip;]]></replace>
+		<description><![CDATA[Замена многоточие на код.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_mdash</access_key>
+        <search><![CDATA[—]]></search>
+        <replace><![CDATA[-]]></replace>
+		<description><![CDATA[Замена в ручную проставленного тире на дефис для последующего типографирования.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_lquote</access_key>
+        <search><![CDATA[«]]></search>
+        <replace><![CDATA["]]></replace>
+		<description><![CDATA[Замена символа левой "ёлочки" на кавычку.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_laquo</access_key>
+        <search><![CDATA[«]]></search>
+        <replace><![CDATA["]]></replace>
+		<description><![CDATA[Замена символа левой "ёлочки" на кавычку.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_bdquo</access_key>
+        <search><![CDATA[„]]></search>
+        <replace><![CDATA["]]></replace>
+		<description><![CDATA[Замена открывающей "лапки" на кавычку.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_ldquo</access_key>
+        <search><![CDATA[“]]></search>
+        <replace><![CDATA["]]></replace>
+		<description><![CDATA[Замена закрывающей "лапки" на кавычку.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_manual_raquo</access_key>
+        <search><![CDATA[»]]></search>
+        <replace><![CDATA["]]></replace>
+		<description><![CDATA[Замена символа правой "ёлочки" на кавычку.]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_ge</access_key>
+        <search><![CDATA[>=]]></search>
+        <replace><![CDATA[&ge;]]></replace>
+		<description><![CDATA[Больше или равно]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_le</access_key>
+        <search><![CDATA[<=]]></search>
+        <replace><![CDATA[&le;]]></replace>
+		<description><![CDATA[Меньше или равно]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_ne</access_key>
+        <search><![CDATA[!=]]></search>
+        <replace><![CDATA[&ne;]]></replace>
+		<description><![CDATA[Не равно равно]]></description>
+    </rule>
+    
+    <rule>
+        <access_key>replace_equiv</access_key>
+        <search><![CDATA[===]]></search>
+        <replace><![CDATA[&equiv;]]></replace>
+		<description><![CDATA[Тождественно равно]]></description>
+    </rule>
+    
+</rules_replace>

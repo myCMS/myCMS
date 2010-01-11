@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>File Source for EngineCore.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+        
+                                    
+                            	        [ <a href="../classtrees_default.html">Class Tree: default</a> ]
+            [ <a href="../elementindex_default.html">Index: default</a> ]
+        		[ <a href="../elementindex.html">All elements</a> ]		
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">default</div>
+		<div id="packageTitle">default</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="todolist">
+			<p><a href="../todolist.html">Todo List</a></p>
+	</div>
+	<div id="packages">
+		Packages:
+					<p><a href="../li_default.html">default</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+							</div>
+			<div id="interfaces">
+							</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+	    	<h1 align="center">Source for file EngineCore.php</h1>
+<p>Documentation is available at <a href="../default/_EngineCore.php.html">EngineCore.php</a></p>
+<div class="php-src">
+<ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;Main&nbsp;class&nbsp;of&nbsp;Mart's&nbsp;engine</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*&nbsp;used&nbsp;singleton&nbsp;design&nbsp;pattern</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;http://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D1%81%D0%B0%D0%B4_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;http://ru.wikipedia.org/wiki/%D0%9E%D0%B4%D0%B8%D0%BD%D0%BE%D1%87%D0%BA%D0%B0_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;http://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%B4%D0%B5%D0%BB%D0%B5%D0%B3%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;http://ru.wikipedia.org/wiki/Composite</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;AlexK</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;1.0</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-key">class&nbsp;</span><a href="../default/EngineCore.html">EngineCore</a>&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-key">static&nbsp;</span><span class="src-var">$instance&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$Smarty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$InputFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$MySQL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$SiteStructure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$Session&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$AttributeOperations</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Constructor&nbsp;of&nbsp;class&nbsp;EngineCore</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;&nbsp;</span><a href="../default/EngineCore.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/InputFilter.html">InputFilter</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/MySQL.html">MySQL</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Session&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/Session.html">Session</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Smarty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/SmartyExt.html">SmartyExt</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">SiteStructure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/SiteStructure.html">SiteStructure</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">AttributeOperations&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/AttributeOperations.html">AttributeOperations</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">SiteStructure</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../default/Page.html">Page</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Smarty</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">MySQL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">InputFilter</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">SiteStructure</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Session</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">AttributeOperations</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span>catch&nbsp;<span class="src-sym">(</span><span class="src-id"><a href="../default/ExceptionExt.html">ExceptionExt</a>&nbsp;</span><span class="src-var">$e</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="src-var">$e</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">exit</span><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Static&nbsp;function,&nbsp;used&nbsp;for&nbsp;creation&nbsp;instance&nbsp;of&nbsp;EngineCore&nbsp;class.</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span></div></li>
+<li><div class="src-line"><a name="a51"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">reference&nbsp;</span><span class="src-doc">to&nbsp;class&nbsp;instance</span></div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">static&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/EngineCore.html#methodsingleton">singleton</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-id">self</span><span class="src-sym">::</span><span class="src-var">$instance</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">self</span><span class="src-sym">::</span><span class="src-var">$instance&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id">self</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">self</span><span class="src-sym">::</span><span class="src-var">$instance</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Declare&nbsp;new,&nbsp;extended&nbsp;version&nbsp;of&nbsp;PageBuilder&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$PageBuilderExt&nbsp;</span><span class="src-doc">reference&nbsp;to&nbsp;extended&nbsp;PageBuilder&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;taken&nbsp;from&nbsp;Page&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span><span class="src-doc">if&nbsp;ok</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/EngineCore.html#methodsetExtendedPageHandler">setExtendedPageHandler</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$PageBuilderExt</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Page</span><span class="src-sym">-&gt;</span><span class="src-id">setExtendedPageHandler</span><span class="src-sym">(</span><span class="src-var">$PageBuilderExt</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a75"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Declare&nbsp;new,&nbsp;extended&nbsp;version&nbsp;of&nbsp;ModuleNAF&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a77"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$ModuleNAFExt&nbsp;</span><span class="src-doc">reference&nbsp;to&nbsp;extended&nbsp;ModuleNAF&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a78"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;taken&nbsp;from&nbsp;Page&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a79"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span><span class="src-doc">if&nbsp;ok</span></div></li>
+<li><div class="src-line"><a name="a80"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/EngineCore.html#methodsetExtendedModuleNAFHandler">setExtendedModuleNAFHandler</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$ModuleNAFExt</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Page</span><span class="src-sym">-&gt;</span><span class="src-id">setExtendedModuleNAFHandler</span><span class="src-sym">(</span><span class="src-var">$ModuleNAFExt</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a89"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Declare&nbsp;new,&nbsp;extended&nbsp;version&nbsp;of&nbsp;ModuleCatalogue&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a90"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">$ModuleCatalogueExt&nbsp;</span><span class="src-doc">reference&nbsp;to&nbsp;extended&nbsp;ModuleCatalogue&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a92"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;taken&nbsp;from&nbsp;Page&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a93"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span><span class="src-doc">if&nbsp;ok</span></div></li>
+<li><div class="src-line"><a name="a94"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/EngineCore.html#methodsetExtendedModuleCatalogueHandler">setExtendedModuleCatalogueHandler</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$ModuleCatalogueExt</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Page</span><span class="src-sym">-&gt;</span><span class="src-id">setExtendedModuleCatalogueHandler</span><span class="src-sym">(</span><span class="src-var">$ModuleCatalogueExt</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a103"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Used&nbsp;for&nbsp;render&nbsp;page</span></div></li>
+<li><div class="src-line"><a name="a104"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc">&nbsp;&nbsp;</span><span class="src-doc-type">nothing&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a106"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@throws</span><span class="src-doc">&nbsp;&nbsp;taken&nbsp;from&nbsp;Page&nbsp;class</span></div></li>
+<li><div class="src-line"><a name="a107"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-type">true&nbsp;</span><span class="src-doc">if&nbsp;ok</span></div></li>
+<li><div class="src-line"><a name="a108"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../default/EngineCore.html#methodRenderPage">RenderPage</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">Page</span><span class="src-sym">-&gt;</span><span class="src-id">RenderPage</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a115"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a116"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Tue, 26 May 2009 12:06:05 +0300 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.1</a>
+	</div>
+</div>
+</body>
+</html>
